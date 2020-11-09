@@ -86,6 +86,9 @@ class ImportTransactionsService {
       })),
     );
 
+    const categoriesTest = await categoriesRepository.find();
+    console.log(categoriesTest);
+
     await transactionsRepository.save(createdTransactions);
 
     await fs.promises.unlink(filePath);
